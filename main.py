@@ -1,0 +1,2 @@
+import comp151Colors
+import dearpygui.dearpygui as graphics
