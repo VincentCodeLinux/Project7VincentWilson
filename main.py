@@ -12,9 +12,11 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((680, 95), (710, 105 ), fill=comp151Colors.BLACK)
         graphics.draw_rectangle((820, 95), (790, 105), fill=comp151Colors.BLACK)
         #Code for the first road
-        graphics.draw_rectangle((0, 200), (1500, 450), fill=comp151Colors.BLACK)
+        graphics.draw_rectangle((0, 200), (1500, 350), fill=comp151Colors.BLACK)
         #Code for the grassy area
-        graphics.draw_rectangle((0, 450), (1500, 700), fill=comp151Colors.GREEN)
+        graphics.draw_rectangle((0, 350), (1500, 500), fill=comp151Colors.GREEN)
+        #Code for 2nd road
+        graphics.draw_rectangle((0, 500), (1500, 650), fill=comp151Colors.BLACK)
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
