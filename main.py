@@ -17,6 +17,21 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((0, 350), (1500, 500), fill=comp151Colors.GREEN)
         #Code for 2nd road
         graphics.draw_rectangle((0, 500), (1500, 650), fill=comp151Colors.BLACK)
+        #Code for the parking lot/end
+        graphics.draw_rectangle((0, 650), (150, 800))
+        graphics.draw_rectangle((0, 650), (300, 800))
+        graphics.draw_rectangle((0, 650), (450, 800))
+        graphics.draw_rectangle((0, 650), (600, 800))
+        graphics.draw_rectangle((0, 650), (750, 800))
+        graphics.draw_rectangle((0, 650), (900, 800))
+        graphics.draw_rectangle((0, 650), (1050, 800))
+        graphics.draw_rectangle((0, 650), (1200, 800))
+        graphics.draw_rectangle((0, 650), (1350, 800))
+        graphics.draw_rectangle((0, 650), (1500, 800))
+
+
+
+
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
