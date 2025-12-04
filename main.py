@@ -28,7 +28,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((0, 650), (1200, 800))
         graphics.draw_rectangle((0, 650), (1350, 800))
         graphics.draw_rectangle((0, 650), (1500, 800))
-
+        #code
 
 
 
