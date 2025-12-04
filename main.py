@@ -1,7 +1,13 @@
 import comp151Colors
 import dearpygui.dearpygui as graphics
 
+
+
 graphics.create_context()
+player_y = 100
+player_x = 100
+player_speed = 5
+player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
 with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
