@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I added the parking lot/parking spot rectangles">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I set up the basic boiler plate code for the person">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -101,7 +101,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764799580851</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="I added the rest of the sprites that im going to be using">
+      <option name="closed" value="true" />
+      <created>1764879636878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764879636878</updated>
+    </task>
+    <task id="LOCAL-00006" summary="I set up the basic boiler plate code for the person">
+      <option name="closed" value="true" />
+      <created>1764880139236</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764880139236</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -109,6 +125,8 @@
     <MESSAGE value="I set up the top part of the map" />
     <MESSAGE value="Modified the rectangles and added the second road" />
     <MESSAGE value="I added the parking lot/parking spot rectangles" />
-    <option name="LAST_COMMIT_MESSAGE" value="I added the parking lot/parking spot rectangles" />
+    <MESSAGE value="I added the rest of the sprites that im going to be using" />
+    <MESSAGE value="I set up the basic boiler plate code for the person" />
+    <option name="LAST_COMMIT_MESSAGE" value="I set up the basic boiler plate code for the person" />
   </component>
 </project>
