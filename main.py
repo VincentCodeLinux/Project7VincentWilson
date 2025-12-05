@@ -5,9 +5,9 @@ import dearpygui.dearpygui as graphics
 
 graphics.create_context()
 #This is some of the player variables
-player_y = 100
-player_x = 100
-player_speed = 5
+player_y = 10
+player_x = 10
+player_speed = 10
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 #This code sets up the movement for the character
@@ -29,6 +29,7 @@ with graphics.texture_registry():
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
 with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
+        #This draws the player
         #Code for the store
         graphics.draw_rectangle((0, 0), (1500, 200), fill=comp151Colors.MAROON)
         graphics.draw_rectangle((550, 0), (950, 200), fill=comp151Colors.WHITE)
@@ -53,11 +54,15 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((0, 650), (1350, 800))
         graphics.draw_rectangle((0, 650), (1500, 800))
         #code
+        # This draws the player
+        graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + player_w, player_y + player_h),
+                            tag="player_update")
 
 
 
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
+graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
