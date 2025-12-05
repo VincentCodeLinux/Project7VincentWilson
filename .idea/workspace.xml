@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I added the texture registry">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I got the player a proper size and moving">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +124,31 @@
       <option name="project" value="LOCAL" />
       <updated>1764880638671</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="I got the character on the screen. I still need to shrink him and help him move">
+      <option name="closed" value="true" />
+      <created>1764899422675</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764899422675</updated>
+    </task>
+    <task id="LOCAL-00009" summary="I got the player moving">
+      <option name="closed" value="true" />
+      <created>1764899585010</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764899585010</updated>
+    </task>
+    <task id="LOCAL-00010" summary="I got the player a proper size and moving">
+      <option name="closed" value="true" />
+      <created>1764902456267</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764902456267</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,6 +159,9 @@
     <MESSAGE value="I added the rest of the sprites that im going to be using" />
     <MESSAGE value="I set up the basic boiler plate code for the person" />
     <MESSAGE value="I added the texture registry" />
-    <option name="LAST_COMMIT_MESSAGE" value="I added the texture registry" />
+    <MESSAGE value="I got the character on the screen. I still need to shrink him and help him move" />
+    <MESSAGE value="I got the player moving" />
+    <MESSAGE value="I got the player a proper size and moving" />
+    <option name="LAST_COMMIT_MESSAGE" value="I got the player a proper size and moving" />
   </component>
 </project>
