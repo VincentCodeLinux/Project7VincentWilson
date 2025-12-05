@@ -26,6 +26,8 @@ def move_player(sender, app_data):
         graphics.configure_item("player_update", pmin=(player_x, player_y), pmax=(player_x+player_w, player_y+player_h))
 with graphics.texture_registry():
     graphics.add_static_texture(player_w, player_h, player_raw_data, tag="PersonSprite")
+with graphics.handler_registry():
+    graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
 with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
