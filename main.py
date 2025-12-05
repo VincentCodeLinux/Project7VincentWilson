@@ -7,13 +7,21 @@ graphics.create_context()
 #This is some of the player variables
 player_y = 10
 player_x = 500
+firebird_y = 125
+firebird_x = 500
 player_speed = 10
-scaling = 0.25
+person_scaling = 0.25
+car_scaling = 0.50
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
+firebird_w, firebird_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
 
-shrink_player_w = int(player_w * scaling)
-shrink_player_h = int(player_h * scaling)
+#This code shrinks the player and makes him a proper size
+shrink_player_w = int(player_w * person_scaling)
+shrink_player_h = int(player_h * person_scaling)
+#This code shrinks the first car and makes it a proper size
+shrink_firebird_w = int(firebird_w * car_scaling)
+shrink_firebird_h = int(firebird_h * car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
@@ -30,6 +38,7 @@ def move_player(sender, app_data):
         graphics.configure_item("player_update", pmin=(player_x, player_y), pmax=(player_x+shrink_player_w, player_y+shrink_player_h))
 with graphics.texture_registry():
     graphics.add_static_texture(player_w, player_h, player_raw_data, tag="PersonSprite")
+    graphics.add_static_texture(firebird_w, firebird_h, firebird_raw_data, tag="FirebirdSprite")
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -63,6 +72,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         # This draws the player
         graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
                             tag="player_update")
+        graphics.draw_image("FirebirdSprite", (firebird_x, firebird_y),
+                            (firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h),
+                            tag="firebird_update")
 
 
 
