@@ -6,13 +6,17 @@ import dearpygui.dearpygui as graphics
 graphics.create_context()
 #This is some of the player variables
 player_y = 10
-player_x = 10
+player_x = 500
 player_speed = 10
+scaling = 0.25
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
+
+shrink_player_w = int(player_w * scaling)
+shrink_player_h = int(player_h * scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
-    global player_x, player_y, player_speed, player_w, player_h
+    global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
     key = app_data
     if key == graphics.mvKey_Left:
         player_x -= player_speed
@@ -23,7 +27,7 @@ def move_player(sender, app_data):
     elif key == graphics.mvKey_Down:
         player_y += player_speed
     with graphics.mutex():
-        graphics.configure_item("player_update", pmin=(player_x, player_y), pmax=(player_x+player_w, player_y+player_h))
+        graphics.configure_item("player_update", pmin=(player_x, player_y), pmax=(player_x+shrink_player_w, player_y+shrink_player_h))
 with graphics.texture_registry():
     graphics.add_static_texture(player_w, player_h, player_raw_data, tag="PersonSprite")
 with graphics.handler_registry():
@@ -57,7 +61,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((0, 650), (1500, 800))
         #code
         # This draws the player
-        graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + player_w, player_y + player_h),
+        graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
                             tag="player_update")
 
 
