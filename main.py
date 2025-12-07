@@ -23,13 +23,14 @@ car1_y = 500
 car1_x = 600
 car2_y = 500
 car2_x = 800
-target_car_y = 700
-target_car_x = 800
+target_car_y = 635
+target_car_x = 735
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
 dog_scaling = 0.10
 bear_scaling = 0.25
+target_car_scaling = 0.35
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 #This code loads the image for the first car picture
@@ -51,7 +52,7 @@ car1_w, car1_h, channels, car1_raw_data = graphics.load_image("CavalierSprite.pn
 #This code loads the third car on the second street
 car2_w, car2_h, channels, car2_raw_data = graphics.load_image("CavalierSprite.png")
 #This code loads the goal car at the end
-target_car_w, target_car_h, channels, target_car_raw_data = graphics.load_image("carSprite.png")
+target_car_w, target_car_h, channels, target_car_raw_data = graphics.load_image("CarDrawing.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -83,8 +84,8 @@ shrink_car1_h = int(car1_h * car_scaling)
 shrink_car2_w = int(car2_w * car_scaling)
 shrink_car2_h = int(car2_h * car_scaling)
 #This code shrinks the final car at the end
-shrink_target_car_w = int(target_car_w * car_scaling)
-shrink_target_car_h = int(target_car_h * car_scaling)
+shrink_target_car_w = int(target_car_w * target_car_scaling)
+shrink_target_car_h = int(target_car_h * target_car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
@@ -110,6 +111,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(car_w, car_h, car_raw_data, tag="carSprite")
     graphics.add_static_texture(car1_w, car1_h, car_raw_data, tag="car1Sprite")
     graphics.add_static_texture(car2_w, car2_h, car_raw_data, tag="car2Sprite")
+    graphics.add_static_texture(target_car_w, target_car_h, target_car_raw_data, tag="target_car_Sprite")
 
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
@@ -171,6 +173,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("carSprite", (car2_x, car2_y),
                             (car2_x + shrink_car2_w, car2_y + shrink_car2_h),
                             tag="car2_update")
+        graphics.draw_image("target_car_Sprite", (target_car_x, target_car_y),
+                            (target_car_x + shrink_target_car_w, target_car_y + shrink_target_car_h),
+                            tag="target_car_update")
 
 
 
