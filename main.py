@@ -124,6 +124,13 @@ pass
 
 #This will be where the collision code is
 def collisioncar_check():
+    global player_x, player_y
+    left_side_of_player = {'x': player_x, 'y': player_y}
+    right_side_of_player = {'x': player_x + shrink_player_w, 'y': player_y + shrink_player_h}
+
+    cars = [(firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h),
+            (firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h),
+            (firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h)]
 
 
 
