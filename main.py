@@ -113,6 +113,19 @@ with graphics.texture_registry():
     graphics.add_static_texture(car2_w, car2_h, car_raw_data, tag="car2Sprite")
     graphics.add_static_texture(target_car_w, target_car_h, target_car_raw_data, tag="target_car_Sprite")
 
+#This is where I move the sprites
+def move_firebird():
+    global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h
+    firebird_x += 3
+    if firebird_x > 1500:
+        firebird_x = -shrink_firebird_w
+    graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y), pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
+pass
+
+
+
+
+
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -181,6 +194,8 @@ with graphics.window(label="Project 7", width=1600, height=1200):
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
-graphics.render_dearpygui_frame()
+while graphics.is_dearpygui_running():
+    move_firebird()
+    graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
