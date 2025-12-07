@@ -122,6 +122,10 @@ def move_firebird():
     graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y), pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
 pass
 
+#This will be where the collision code is
+def collisioncar_check():
+
+
 
 
 
