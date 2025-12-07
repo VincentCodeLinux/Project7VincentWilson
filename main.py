@@ -13,8 +13,10 @@ firebird1_y = 125
 firebird1_x = 800
 firebird2_y = 125
 firebird2_x = 1100
-dog_y = 125
+dog_y = 360
 dog_x = 1100
+dog1_y = 360
+dog1_x = 700
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.50
@@ -63,6 +65,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(firebird_w, firebird_h, firebird_raw_data, tag="FirebirdSprite")
     graphics.add_static_texture(firebird1_w, firebird1_h, firebird_raw_data, tag="Firebird1Sprite")
     graphics.add_static_texture(firebird2_w, firebird2_h, firebird_raw_data, tag="Firebird2Sprite")
+    graphics.add_static_texture(dog_w, dog_h, dog_raw_data, tag="dogSprite")
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -105,7 +108,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("FirebirdSprite", (firebird2_x, firebird2_y),
                             (firebird2_x + shrink_firebird2_w, firebird2_y + shrink_firebird2_h),
         tag="firebird2_update")
-
+        graphics.draw_image("dogSprite", (dog_x, dog_y),
+                            (dog_x + shrink_dog_w, dog_y + shrink_dog_h),
+                            tag="dog_update")
 
 
 
