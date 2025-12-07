@@ -50,6 +50,8 @@ car_w, car_h, channels, car_raw_data = graphics.load_image("CavalierSprite.png")
 car1_w, car1_h, channels, car1_raw_data = graphics.load_image("CavalierSprite.png")
 #This code loads the third car on the second street
 car2_w, car2_h, channels, car2_raw_data = graphics.load_image("CavalierSprite.png")
+#This code loads the goal car at the end
+target_car_w, target_car_h, channels, target_car_raw_data = graphics.load_image("carSprite.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -81,8 +83,8 @@ shrink_car1_h = int(car1_h * car_scaling)
 shrink_car2_w = int(car2_w * car_scaling)
 shrink_car2_h = int(car2_h * car_scaling)
 #This code shrinks the final car at the end
-shrink_car2_w = int(car2_w * car_scaling)
-shrink_car2_h = int(car2_h * car_scaling)
+shrink_target_car_w = int(target_car_w * car_scaling)
+shrink_target_car_h = int(target_car_h * car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
