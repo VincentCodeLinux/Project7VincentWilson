@@ -1,8 +1,6 @@
 import comp151Colors
 import dearpygui.dearpygui as graphics
 
-
-
 graphics.create_context()
 #This is some of the player variables
 player_y = 10
@@ -13,14 +11,17 @@ firebird1_y = 150
 firebird1_x = 700
 firebird2_y = 185
 firebird2_x = 850
-dog_y = 360
+dog_y = 400
 dog_x = 1100
 dog1_y = 360
 dog1_x = 400
+bear_y = 360
+bear_x = 400
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
 dog_scaling = 0.10
+bear_scaling = 0.10
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 #This code loads the image for the first car picture
@@ -33,6 +34,8 @@ firebird2_w, firebird2_h, channels, firebird_raw_data = graphics.load_image("Fir
 dog_w, dog_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
 #This code loads the second dog
 dog1_w, dog1_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
+#This code loads the bear
+bear_w, bear_h, channels, bear_raw_data = graphics.load_image("BearSprite.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -51,6 +54,9 @@ shrink_dog_h = int(dog_h * dog_scaling)
 #This code shrinks the second dog sprite
 shrink_dog1_w = int(dog1_w * dog_scaling)
 shrink_dog1_h = int(dog1_h * dog_scaling)
+#This code shrinks the bear
+shrink_bear_w = int(bear_w * bear_scaling)
+shrink_bear_h = int(bear_h * bear_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
