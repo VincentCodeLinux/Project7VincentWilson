@@ -17,8 +17,10 @@ dog1_y = 360
 dog1_x = 400
 bear_y = 380
 bear_x = 400
-car_y = 600
+car_y = 500
 car_x = 400
+car1_y = 500
+car1_x = 600
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
@@ -40,7 +42,8 @@ dog1_w, dog1_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
 bear_w, bear_h, channels, bear_raw_data = graphics.load_image("BearSprite.png")
 #This code loads the first car on the second street
 car_w, car_h, channels, car_raw_data = graphics.load_image("CavalierSprite.png")
-
+#This code loads the second car on the second street
+car1_w, car1_h, channels, car1_raw_data = graphics.load_image("CavalierSprite.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -63,8 +66,8 @@ shrink_dog1_h = int(dog1_h * dog_scaling)
 shrink_bear_w = int(bear_w * bear_scaling)
 shrink_bear_h = int(bear_h * bear_scaling)
 #This code shrinks the car on the second street
-shrink_bear_w = int(bear_w * bear_scaling)
-shrink_bear_h = int(bear_h * bear_scaling)
+shrink_car_w = int(car_w * car_scaling)
+shrink_car_h = int(car_h * car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
@@ -87,7 +90,8 @@ with graphics.texture_registry():
     graphics.add_static_texture(dog_w, dog_h, dog_raw_data, tag="dogSprite")
     graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
     graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
-    graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
+    graphics.add_static_texture(car_w, car_h, car_raw_data, tag="carSprite")
+
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -139,6 +143,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("bearSprite", (bear_x, bear_y),
                             (bear_x + shrink_bear_w, dog1_y + shrink_bear_h),
                             tag="bear_update")
+        graphics.draw_image("carSprite", (car_x, car_y),
+                            (car_x + shrink_car_w, car_y + shrink_car_h),
+                            tag="car_update")
 
 
 
