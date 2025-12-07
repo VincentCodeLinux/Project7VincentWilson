@@ -155,6 +155,8 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((0, 650), (1200, 800))
         graphics.draw_rectangle((0, 650), (1350, 800))
         graphics.draw_rectangle((0, 650), (1500, 800))
+        graphics.draw_text((130, 20), f"Grocery Store",
+                      color=comp151Colors.WHITE, size=25)
         #code
         # This draws the player
         graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
