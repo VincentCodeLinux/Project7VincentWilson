@@ -7,19 +7,19 @@ graphics.create_context()
 #This is some of the player variables
 player_y = 10
 player_x = 500
-firebird_y = 125
+firebird_y = 175
 firebird_x = 500
-firebird1_y = 125
-firebird1_x = 800
-firebird2_y = 125
-firebird2_x = 1100
+firebird1_y = 150
+firebird1_x = 700
+firebird2_y = 185
+firebird2_x = 850
 dog_y = 360
 dog_x = 1100
 dog1_y = 360
-dog1_x = 700
+dog1_x = 400
 player_speed = 10
 person_scaling = 0.25
-car_scaling = 0.50
+car_scaling = 0.25
 dog_scaling = 0.10
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
@@ -71,6 +71,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(firebird1_w, firebird1_h, firebird_raw_data, tag="Firebird1Sprite")
     graphics.add_static_texture(firebird2_w, firebird2_h, firebird_raw_data, tag="Firebird2Sprite")
     graphics.add_static_texture(dog_w, dog_h, dog_raw_data, tag="dogSprite")
+    graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -116,6 +117,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("dogSprite", (dog_x, dog_y),
                             (dog_x + shrink_dog_w, dog_y + shrink_dog_h),
                             tag="dog_update")
+        graphics.draw_image("dogSprite", (dog1_x, dog1_y),
+                            (dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h),
+                            tag="dog1_update")
 
 
 
