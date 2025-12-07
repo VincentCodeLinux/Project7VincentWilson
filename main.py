@@ -68,6 +68,9 @@ shrink_bear_h = int(bear_h * bear_scaling)
 #This code shrinks the car on the second street
 shrink_car_w = int(car_w * car_scaling)
 shrink_car_h = int(car_h * car_scaling)
+#This code shrinks the second car on the second street
+shrink_car1_w = int(car1_w * car_scaling)
+shrink_car1_h = int(car1_h * car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
@@ -91,6 +94,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
     graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
     graphics.add_static_texture(car_w, car_h, car_raw_data, tag="carSprite")
+    graphics.add_static_texture(car1_w, car1_h, car_raw_data, tag="car1Sprite")
 
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
@@ -146,6 +150,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("carSprite", (car_x, car_y),
                             (car_x + shrink_car_w, car_y + shrink_car_h),
                             tag="car_update")
+        graphics.draw_image("carSprite", (car1_x, car1_y),
+                            (car1_x + shrink_car1_w, car1_y + shrink_car1_h),
+                            tag="car1_update")
 
 
 
