@@ -17,6 +17,8 @@ dog1_y = 360
 dog1_x = 400
 bear_y = 380
 bear_x = 400
+car_y = 600
+car_x = 400
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
@@ -36,6 +38,9 @@ dog_w, dog_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
 dog1_w, dog1_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
 #This code loads the bear
 bear_w, bear_h, channels, bear_raw_data = graphics.load_image("BearSprite.png")
+#This code loads the first car on the second street
+car_w, car_h, channels, car_raw_data = graphics.load_image("CavalierSprite.png")
+
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -55,6 +60,9 @@ shrink_dog_h = int(dog_h * dog_scaling)
 shrink_dog1_w = int(dog1_w * dog_scaling)
 shrink_dog1_h = int(dog1_h * dog_scaling)
 #This code shrinks the bear
+shrink_bear_w = int(bear_w * bear_scaling)
+shrink_bear_h = int(bear_h * bear_scaling)
+#This code shrinks the car on the second street
 shrink_bear_w = int(bear_w * bear_scaling)
 shrink_bear_h = int(bear_h * bear_scaling)
 #This code sets up the movement for the character
@@ -78,6 +86,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(firebird2_w, firebird2_h, firebird_raw_data, tag="Firebird2Sprite")
     graphics.add_static_texture(dog_w, dog_h, dog_raw_data, tag="dogSprite")
     graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
+    graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
     graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
