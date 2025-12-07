@@ -21,6 +21,8 @@ car_y = 500
 car_x = 400
 car1_y = 500
 car1_x = 600
+car2_y = 500
+car2_x = 800
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
@@ -44,6 +46,8 @@ bear_w, bear_h, channels, bear_raw_data = graphics.load_image("BearSprite.png")
 car_w, car_h, channels, car_raw_data = graphics.load_image("CavalierSprite.png")
 #This code loads the second car on the second street
 car1_w, car1_h, channels, car1_raw_data = graphics.load_image("CavalierSprite.png")
+#This code loads the third car on the second street
+car2_w, car2_h, channels, car2_raw_data = graphics.load_image("CavalierSprite.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -71,6 +75,9 @@ shrink_car_h = int(car_h * car_scaling)
 #This code shrinks the second car on the second street
 shrink_car1_w = int(car1_w * car_scaling)
 shrink_car1_h = int(car1_h * car_scaling)
+#This code shrinks the third car on the second street
+shrink_car2_w = int(car2_w * car_scaling)
+shrink_car2_h = int(car2_h * car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
@@ -95,6 +102,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
     graphics.add_static_texture(car_w, car_h, car_raw_data, tag="carSprite")
     graphics.add_static_texture(car1_w, car1_h, car_raw_data, tag="car1Sprite")
+    graphics.add_static_texture(car2_w, car2_h, car_raw_data, tag="car2Sprite")
 
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
@@ -153,6 +161,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("carSprite", (car1_x, car1_y),
                             (car1_x + shrink_car1_w, car1_y + shrink_car1_h),
                             tag="car1_update")
+        graphics.draw_image("carSprite", (car2_x, car2_y),
+                            (car2_x + shrink_car2_w, car2_y + shrink_car2_h),
+                            tag="car2_update")
 
 
 
