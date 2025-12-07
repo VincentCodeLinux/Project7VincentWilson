@@ -15,13 +15,13 @@ dog_y = 400
 dog_x = 1100
 dog1_y = 360
 dog1_x = 400
-bear_y = 360
+bear_y = 380
 bear_x = 400
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
 dog_scaling = 0.10
-bear_scaling = 0.10
+bear_scaling = 0.25
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 #This code loads the image for the first car picture
@@ -78,6 +78,7 @@ with graphics.texture_registry():
     graphics.add_static_texture(firebird2_w, firebird2_h, firebird_raw_data, tag="Firebird2Sprite")
     graphics.add_static_texture(dog_w, dog_h, dog_raw_data, tag="dogSprite")
     graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
+    graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -126,6 +127,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("dogSprite", (dog1_x, dog1_y),
                             (dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h),
                             tag="dog1_update")
+        graphics.draw_image("bearSprite", (bear_x, bear_y),
+                            (bear_x + shrink_bear_w, dog1_y + shrink_bear_h),
+                            tag="bear_update")
 
 
 

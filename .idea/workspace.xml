@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I made code for the third car">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I just modified the sizes of the cars to make it easier to get around them once the collisions are done">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +188,47 @@
       <option name="project" value="LOCAL" />
       <updated>1765133339247</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="I started the code for the dog, I loaded the image">
+      <option name="closed" value="true" />
+      <created>1765133574062</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1765133574062</updated>
+    </task>
+    <task id="LOCAL-00017" summary="I started the code for the dog, I loaded the image">
+      <option name="closed" value="true" />
+      <created>1765133579777</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765133579777</updated>
+    </task>
+    <task id="LOCAL-00018" summary="I finished the code for the 1st dog">
+      <option name="closed" value="true" />
+      <created>1765134310395</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1765134310395</updated>
+    </task>
+    <task id="LOCAL-00019" summary="I finished the code for loading the second log and shrinking the size of it">
+      <option name="closed" value="true" />
+      <created>1765134514965</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1765134514965</updated>
+    </task>
+    <task id="LOCAL-00020" summary="I just modified the sizes of the cars to make it easier to get around them once the collisions are done">
+      <option name="closed" value="true" />
+      <created>1765135028051</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1765135028051</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,6 +246,10 @@
     <MESSAGE value="I made code to load the second car" />
     <MESSAGE value="I made code for the second car" />
     <MESSAGE value="I made code for the third car" />
-    <option name="LAST_COMMIT_MESSAGE" value="I made code for the third car" />
+    <MESSAGE value="I started the code for the dog, I loaded the image" />
+    <MESSAGE value="I finished the code for the 1st dog" />
+    <MESSAGE value="I finished the code for loading the second log and shrinking the size of it" />
+    <MESSAGE value="I just modified the sizes of the cars to make it easier to get around them once the collisions are done" />
+    <option name="LAST_COMMIT_MESSAGE" value="I just modified the sizes of the cars to make it easier to get around them once the collisions are done" />
   </component>
 </project>
