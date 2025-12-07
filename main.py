@@ -10,7 +10,7 @@ player_x = 500
 firebird_y = 125
 firebird_x = 500
 firebird1_y = 125
-firebird1_x = 700
+firebird1_x = 800
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.50
@@ -26,6 +26,9 @@ shrink_player_h = int(player_h * person_scaling)
 #This code shrinks the first car and makes it a proper size
 shrink_firebird_w = int(firebird_w * car_scaling)
 shrink_firebird_h = int(firebird_h * car_scaling)
+#This code shrinks the second car in the line
+shrink_firebird1_w = int(firebird1_w * car_scaling)
+shrink_firebird1_h = int(firebird1_h * car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
@@ -43,6 +46,7 @@ def move_player(sender, app_data):
 with graphics.texture_registry():
     graphics.add_static_texture(player_w, player_h, player_raw_data, tag="PersonSprite")
     graphics.add_static_texture(firebird_w, firebird_h, firebird_raw_data, tag="FirebirdSprite")
+    graphics.add_static_texture(firebird1_w, firebird1_h, firebird_raw_data, tag="Firebird1Sprite")
 with graphics.handler_registry():
     graphics.add_key_press_handler(callback=move_player)
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
@@ -79,6 +83,9 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_image("FirebirdSprite", (firebird_x, firebird_y),
                             (firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h),
                             tag="firebird_update")
+        graphics.draw_image("FirebirdSprite", (firebird1_x, firebird1_y),
+                            (firebird1_x + shrink_firebird1_w, firebird1_y + shrink_firebird1_h),
+                            tag="firebird1_update")
 
 
 
