@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I finished the code for the bear to appear">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I finished the code for the second car on the second street">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +244,31 @@
       <option name="project" value="LOCAL" />
       <updated>1765138823678</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="I finished the code to load and shrink the car on the second street">
+      <option name="closed" value="true" />
+      <created>1765139101059</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1765139101059</updated>
+    </task>
+    <task id="LOCAL-00024" summary="I finisished the code for the first car on the second section">
+      <option name="closed" value="true" />
+      <created>1765139383064</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1765139383064</updated>
+    </task>
+    <task id="LOCAL-00025" summary="I finished the code for the second car on the second street">
+      <option name="closed" value="true" />
+      <created>1765139545355</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1765139545355</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -268,6 +292,9 @@
     <MESSAGE value="I just modified the sizes of the cars to make it easier to get around them once the collisions are done" />
     <MESSAGE value="I started the code for the bear, I made the code to shrink them." />
     <MESSAGE value="I finished the code for the bear to appear" />
-    <option name="LAST_COMMIT_MESSAGE" value="I finished the code for the bear to appear" />
+    <MESSAGE value="I finished the code to load and shrink the car on the second street" />
+    <MESSAGE value="I finisished the code for the first car on the second section" />
+    <MESSAGE value="I finished the code for the second car on the second street" />
+    <option name="LAST_COMMIT_MESSAGE" value="I finished the code for the second car on the second street" />
   </component>
 </project>

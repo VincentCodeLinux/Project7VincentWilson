@@ -23,6 +23,8 @@ car1_y = 500
 car1_x = 600
 car2_y = 500
 car2_x = 800
+target_car_y = 700
+target_car_x = 800
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.25
@@ -76,6 +78,9 @@ shrink_car_h = int(car_h * car_scaling)
 shrink_car1_w = int(car1_w * car_scaling)
 shrink_car1_h = int(car1_h * car_scaling)
 #This code shrinks the third car on the second street
+shrink_car2_w = int(car2_w * car_scaling)
+shrink_car2_h = int(car2_h * car_scaling)
+#This code shrinks the final car at the end
 shrink_car2_w = int(car2_w * car_scaling)
 shrink_car2_h = int(car2_h * car_scaling)
 #This code sets up the movement for the character
