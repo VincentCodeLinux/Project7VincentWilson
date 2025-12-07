@@ -13,9 +13,12 @@ firebird1_y = 125
 firebird1_x = 800
 firebird2_y = 125
 firebird2_x = 1100
+dog_y = 125
+dog_x = 1100
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.50
+dog_scaling = 0.10
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 #This code loads the image for the first car picture
@@ -24,6 +27,8 @@ firebird_w, firebird_h, channels, firebird_raw_data = graphics.load_image("Fireb
 firebird1_w, firebird1_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
 #this loads the third car image
 firebird2_w, firebird2_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
+#This is the code to load the dog
+dog_w, dog_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
@@ -36,6 +41,9 @@ shrink_firebird1_h = int(firebird1_h * car_scaling)
 #This code shrinks the third car in the line
 shrink_firebird2_w = int(firebird2_w * car_scaling)
 shrink_firebird2_h = int(firebird2_h * car_scaling)
+#This code shrinks the dog sprite
+shrink_dog_w = int(dog_w * dog_scaling)
+shrink_dog_h = int(dog_h * dog_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
