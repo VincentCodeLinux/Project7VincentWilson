@@ -9,13 +9,17 @@ player_y = 10
 player_x = 500
 firebird_y = 125
 firebird_x = 500
+firebird1_y = 125
+firebird1_x = 700
 player_speed = 10
 person_scaling = 0.25
 car_scaling = 0.50
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
+#This code loads the image for the first car picture
 firebird_w, firebird_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
-
+#This code loads the image for the second car picture
+firebird1_w, firebird1_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
 #This code shrinks the player and makes him a proper size
 shrink_player_w = int(player_w * person_scaling)
 shrink_player_h = int(player_h * person_scaling)
