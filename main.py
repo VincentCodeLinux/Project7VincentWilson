@@ -116,9 +116,9 @@ with graphics.texture_registry():
 #This is where I move the sprites
 def move_firebird():
     global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h
-    firebird_x += 3
-    if firebird_x > 1500:
-        firebird_x = -shrink_firebird_w
+    firebird_x -= 3
+    if firebird_x < 0 :
+        firebird_x = 1500
     graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y), pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
 pass
 
@@ -155,6 +155,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_rectangle((0, 650), (1200, 800))
         graphics.draw_rectangle((0, 650), (1350, 800))
         graphics.draw_rectangle((0, 650), (1500, 800))
+        #This code draws the sign for the store
         graphics.draw_text((130, 20), f"Grocery Store",
                       color=comp151Colors.WHITE, size=25)
         #code
