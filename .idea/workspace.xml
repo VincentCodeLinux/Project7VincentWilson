@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I got the player a proper size and moving">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I made code for the third car">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +148,47 @@
       <option name="project" value="LOCAL" />
       <updated>1764902456267</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="I added a car and changed the scaling for it. Its now on the screen">
+      <option name="closed" value="true" />
+      <created>1764903020265</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764903020265</updated>
+    </task>
+    <task id="LOCAL-00012" summary="I added a car and changed the scaling for it. Its now on the screen">
+      <option name="closed" value="true" />
+      <created>1764903034300</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764903034300</updated>
+    </task>
+    <task id="LOCAL-00013" summary="I made code to load the second car">
+      <option name="closed" value="true" />
+      <created>1765127640135</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765127640135</updated>
+    </task>
+    <task id="LOCAL-00014" summary="I made code for the second car">
+      <option name="closed" value="true" />
+      <created>1765132798713</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1765132798713</updated>
+    </task>
+    <task id="LOCAL-00015" summary="I made code for the third car">
+      <option name="closed" value="true" />
+      <created>1765133339247</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1765133339247</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -162,6 +202,10 @@
     <MESSAGE value="I got the character on the screen. I still need to shrink him and help him move" />
     <MESSAGE value="I got the player moving" />
     <MESSAGE value="I got the player a proper size and moving" />
-    <option name="LAST_COMMIT_MESSAGE" value="I got the player a proper size and moving" />
+    <MESSAGE value="I added a car and changed the scaling for it. Its now on the screen" />
+    <MESSAGE value="I made code to load the second car" />
+    <MESSAGE value="I made code for the second car" />
+    <MESSAGE value="I made code for the third car" />
+    <option name="LAST_COMMIT_MESSAGE" value="I made code for the third car" />
   </component>
 </project>
