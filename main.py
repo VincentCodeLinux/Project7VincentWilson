@@ -14,10 +14,10 @@ firebird2_y = 185
 firebird2_x = 850
 dog_y = 400
 dog_x = 1100
-dog_xspeed = -3
+dog_xspeed = -1
 dog1_y = 360
 dog1_x = 400
-dog1_xspeed = -3
+dog1_xspeed = -1
 bear_y = 380
 bear_x = 400
 car_y = 500
@@ -234,14 +234,14 @@ def move_firebird():
 
 
 def move_dogs():
-    global dog_x, dog_y, shrink_dog_w, shrink_dog_h, dog1_x, dog1_y, shrink_dog1_w, shrink_dog1_h
-    dog_x += 1
-    if dog_x > 1400:
-        dog_x *=
+    global dog_x, dog_y, shrink_dog_w, shrink_dog_h, dog1_x, dog1_y, shrink_dog1_w, shrink_dog1_h, dog_xspeed, dog1_xspeed
+    dog_x += dog_xspeed
+    if dog_x < 0 or dog_x + shrink_dog_w > 1500:
+        dog_xspeed *= -1
 
-    dog1_x += 1
-    if dog1_x > 1400:
-        dog1_x -= 4
+    dog1_x += dog1_xspeed
+    if dog1_x < 0 or dog1_x + shrink_dog1_w > 1500:
+        dog1_xspeed *= -1
 
     graphics.configure_item("dog_update", pmin=(dog_x, dog_y),
                             pmax=(dog_x + shrink_dog_w, dog_y + shrink_dog_h))
