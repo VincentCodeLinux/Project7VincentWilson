@@ -211,13 +211,13 @@ with graphics.window(label="Project 7", width=1600, height=1200):
 # This is where I move the sprites
 def move_firebird():
             global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird1_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
-            firebird_x -= 3
+            firebird_x -= 2
             if firebird_x < 0:
                 firebird_x = 1500
-            firebird1_x -= 3
+            firebird1_x -= 2
             if firebird1_x < 0:
                 firebird1_x = 1500
-            firebird2_x -= 3
+            firebird2_x -= 2
             if firebird2_x < 0:
                 firebird2_x = 1500
             graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y),
@@ -230,6 +230,22 @@ def move_firebird():
 
             pass
 
+
+def move_dogs():
+    global dog_x, dog_y, shrink_dog_w, shrink_dog_h, dog1_x, dog1_y, shrink_dog1_w, shrink_dog1_h
+    dog_x += 1
+    if dog_x > 800:
+        dog_x -= 2
+    dog1_x += 1
+    if dog1_x > 800:
+        dog1_x -= 2
+
+    graphics.configure_item("dog_update", pmin=(dog_x, dog_y),
+                            pmax=(dog_x + shrink_dog_w, dog_y + shrink_dog_h))
+    graphics.configure_item("dog1_update", pmin=(dog1_x, dog1_y),
+                            pmax=(dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h))
+
+    pass
 
 
 
@@ -273,6 +289,7 @@ while graphics.is_dearpygui_running():
     if not game_over:
         collisioncar_check()
         move_firebird()
+        move_dogs()
     graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
