@@ -266,6 +266,6 @@ while graphics.is_dearpygui_running():
     if not game_over:
         collisioncar_check()
         move_firebird()
-        graphics.render_dearpygui_frame()
+    graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I fixed part of the code by removing the add text for the game over screen">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -356,12 +356,26 @@
       <option name="project" value="LOCAL" />
       <updated>1765154506782</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="I changed code around and added some code to the first set of cars, im still trying to get the Game over screen to pop up">
+      <option name="closed" value="true" />
+      <created>1765159526923</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1765159526923</updated>
+    </task>
+    <task id="LOCAL-00038" summary="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from">
+      <option name="closed" value="true" />
+      <created>1765161689949</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1765161689949</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I got the player a proper size and moving" />
-    <MESSAGE value="I added a car and changed the scaling for it. Its now on the screen" />
     <MESSAGE value="I made code to load the second car" />
     <MESSAGE value="I made code for the second car" />
     <MESSAGE value="I made code for the third car" />
@@ -385,6 +399,8 @@
     <MESSAGE value="I create the player boundaries that could be touched and the boundaries for the top three cars on the first road" />
     <MESSAGE value="I added some collision checks but it still isnt working, heres my current code at this time." />
     <MESSAGE value="I fixed part of the code by removing the add text for the game over screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="I fixed part of the code by removing the add text for the game over screen" />
+    <MESSAGE value="I changed code around and added some code to the first set of cars, im still trying to get the Game over screen to pop up" />
+    <MESSAGE value="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from" />
+    <option name="LAST_COMMIT_MESSAGE" value="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from" />
   </component>
 </project>
