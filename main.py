@@ -3,8 +3,8 @@ import dearpygui.dearpygui as graphics
 
 graphics.create_context()
 #This is some of the player variables
-player_y = 5
-player_x = 500
+player_y = -10
+player_x = 10
 firebird_y = 175
 firebird_x = 500
 firebird1_y = 150
@@ -141,7 +141,6 @@ with graphics.handler_registry():
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
 with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
-        graphics.draw_text((400, 400), "Game Over", color=comp151Colors.RED, size=50, tag='game_over_txt', show=False)
 
         game_over = False
         #This draws the player
@@ -171,6 +170,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         #This code draws the sign for the store
         graphics.draw_text((130, 20), f"Grocery Store",
                       color=comp151Colors.WHITE, size=25)
+        graphics.draw_text((400, 400), "Game Over", color=comp151Colors.WHITE, size=80, tag='game_over_txt', show=False)
         #code
         # This draws the player
         graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
@@ -207,8 +207,8 @@ with graphics.window(label="Project 7", width=1600, height=1200):
                             tag="target_car_update")
 
 
-        # This is where I move the sprites
-        def move_firebird():
+# This is where I move the sprites
+def move_firebird():
             global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird1_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
             firebird_x -= 3
             if firebird_x < 0:
@@ -227,7 +227,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
                                     pmax=(firebird2_x + shrink_firebird2_w, firebird2_y + shrink_firebird2_h))
 
 
-        pass
+            pass
 
 
 
@@ -257,16 +257,12 @@ def collisioncar_check():
 
 
 
-
-
 graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
-    move_firebird()
-    if collisioncar_check():
-        graphics.configure_item("game_over_txt", show=True)
-
-
-    graphics.render_dearpygui_frame()
+    if not game_over:
+        collisioncar_check()
+        move_firebird()
+        graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
