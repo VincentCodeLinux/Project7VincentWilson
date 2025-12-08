@@ -122,15 +122,39 @@ def move_firebird():
     graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y), pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
 pass
 
-#This will be where the collision code is
-def collisioncar_check():
-    global player_x, player_y
-    left_side_of_player = {'x': player_x, 'y': player_y}
-    right_side_of_player = {'x': player_x + shrink_player_w, 'y': player_y + shrink_player_h}
+def do_overlap(l1, r1, l2, r2):
 
-    cars = [(firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h),
-            (firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h),
-            (firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h)]
+    # If one rectangle is to the left of the other
+    if l1.get('x') > r2.get('x') or l2.get('x') > r1.get('x'):
+        return False
+
+    # If one rectangle is above the other
+    if r1.get('y') < l2.get('y') or r2.get('y') < l1.get('y'):
+        return False
+
+    return True
+
+#This will be where the collision code is
+
+def collisioncar_check():
+        global player_x, player_y
+        left_side_of_player = {'x': player_x, 'y': player_y}
+        right_side_of_player = {'x': player_x + shrink_player_w, 'y': player_y + shrink_player_h}
+
+        cars = [(firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h),
+                    (firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h),
+                    (firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h)]
+
+        for car_x, car_y, car_w, car_h in cars:
+                left_side_of_car = {'x': car_x, 'y': car_y}
+                right_side_of_car = {'x': car_x + car_w, 'y': car_y + car_h}
+
+                if do_overlap(left_side_of_player, right_side_of_player, left_side_of_car, right_side_of_car):
+                    graphics.draw_text((400, 400), "Game Over", colors = comp151Colors.RED, size = 50)
+                    return True
+        return False
+
+
 
 
 
@@ -142,6 +166,10 @@ with graphics.handler_registry():
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
 with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
+
+
+
+
         #This draws the player
         #Code for the store
         graphics.draw_rectangle((0, 0), (1500, 200), fill=comp151Colors.MAROON)
@@ -189,7 +217,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
                             (dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h),
                             tag="dog1_update")
         graphics.draw_image("bearSprite", (bear_x, bear_y),
-                            (bear_x + shrink_bear_w, dog1_y + shrink_bear_h),
+                            (bear_x + shrink_bear_w, bear_y + shrink_bear_h),
                             tag="bear_update")
         graphics.draw_image("carSprite", (car_x, car_y),
                             (car_x + shrink_car_w, car_y + shrink_car_h),
@@ -210,6 +238,6 @@ graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
     move_firebird()
+    collisioncar_check()
     graphics.render_dearpygui_frame()
-graphics.start_dearpygui()
 graphics.destroy_context()
