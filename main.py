@@ -324,8 +324,8 @@ def collisioncar_check():
                     dog_top_left = {"x": dog["x"] - 30 , "y": dog["y"] - 60}
                     dog_bottom_right = {"x": dog["x"] + dog["w"] + 30, "y": dog["y"] + dog["h"] + 30}
                     if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
-                        game_over = True
-                        graphics.configure_item("game_over_txt", show=True)
+                        #game_over = True
+                        #graphics.configure_item("game_over_txt", show=True)
                         dog_counter = 1
                 for bear in bears:
                     bear_top_left = {"x": bear["x"], "y": bear["y"]}
@@ -342,11 +342,11 @@ def collisioncar_check():
                         #graphics.configure_item("game_over_txt", show=True)
                         return True
                 for target in target_car:
-                    target_top_left = {"x": ccar["x"], "y": ccar["y"] - 50}
-                    target_bottom_right = {"x": ccar["x"] + ccar["w"], "y": ccar["y"] + ccar["h"] + -220}
-                    if do_overlap(player_top_left, player_bottom_right, ccar_top_left, ccar_bottom_right):
-                        #game_over = True
-                        #graphics.configure_item("game_over_txt", show=True)
+                    target_top_left = {"x": target["x"], "y": target["y"] - 50}
+                    target_bottom_right = {"x": target["x"] + target["w"], "y": target["y"] + target["h"] + -220}
+                    if do_overlap(player_top_left, player_bottom_right, target_top_left, target_bottom_right):
+                        game_over = True
+                        graphics.configure_item("game_over_txt", show=True)
                         return True
 
 

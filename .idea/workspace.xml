@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I got the second row of cars to work with collision. I had to mosify the pixels for the x and y">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,30 +67,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764601719376</updated>
-    </task>
-    <task id="LOCAL-00002" summary="I set up the top part of the map">
-      <option name="closed" value="true" />
-      <created>1764603167704</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1764603167704</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Modified the rectangles and added the second road">
-      <option name="closed" value="true" />
-      <created>1764799276879</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1764799276879</updated>
-    </task>
-    <task id="LOCAL-00004" summary="I added the parking lot/parking spot rectangles">
-      <option name="closed" value="true" />
-      <created>1764799580851</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1764799580851</updated>
     </task>
     <task id="LOCAL-00005" summary="I added the rest of the sprites that im going to be using">
       <option name="closed" value="true" />
@@ -460,13 +436,34 @@
       <option name="project" value="LOCAL" />
       <updated>1765207114408</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="I fixed some of the collision errors I created with the first set of cars, still trying to fix the rest of the collision">
+      <option name="closed" value="true" />
+      <created>1765208860992</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1765208860992</updated>
+    </task>
+    <task id="LOCAL-00052" summary="I got the bear collision to work!, I subtracted 180 pixels from the height">
+      <option name="closed" value="true" />
+      <created>1765228134610</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1765228134610</updated>
+    </task>
+    <task id="LOCAL-00053" summary="I got the second row of cars to work with collision. I had to mosify the pixels for the x and y">
+      <option name="closed" value="true" />
+      <created>1765229350776</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1765229350776</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I finished the code for the third car on the second street" />
-    <MESSAGE value="I started the x and y code for the final target car and shrinked it" />
-    <MESSAGE value="I loaded the image for the target car" />
     <MESSAGE value="I finished the code for displaying the target car" />
     <MESSAGE value="I just got code to work for a car to move, next I need to figure out how to make it so that you get a game over when you touch it" />
     <MESSAGE value="I added the sign for the grocery store" />
@@ -489,6 +486,9 @@
     <MESSAGE value="I created the function for the third set of cars" />
     <MESSAGE value="I added the basic movement code for the second set of cars" />
     <MESSAGE value="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section" />
-    <option name="LAST_COMMIT_MESSAGE" value="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section" />
+    <MESSAGE value="I fixed some of the collision errors I created with the first set of cars, still trying to fix the rest of the collision" />
+    <MESSAGE value="I got the bear collision to work!, I subtracted 180 pixels from the height" />
+    <MESSAGE value="I got the second row of cars to work with collision. I had to mosify the pixels for the x and y" />
+    <option name="LAST_COMMIT_MESSAGE" value="I got the second row of cars to work with collision. I had to mosify the pixels for the x and y" />
   </component>
 </project>
