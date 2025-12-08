@@ -113,8 +113,8 @@ with graphics.texture_registry():
     graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
     graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
     graphics.add_static_texture(car_w, car_h, car_raw_data, tag="carSprite")
-    graphics.add_static_texture(car1_w, car1_h, car_raw_data, tag="car1Sprite")
-    graphics.add_static_texture(car2_w, car2_h, car_raw_data, tag="car2Sprite")
+    graphics.add_static_texture(car1_w, car1_h, car1_raw_data, tag="car1Sprite")
+    graphics.add_static_texture(car2_w, car2_h, car2_raw_data, tag="car2Sprite")
     graphics.add_static_texture(target_car_w, target_car_h, target_car_raw_data, tag="target_car_Sprite")
 
 
@@ -288,8 +288,8 @@ def collisioncar_check():
                 if game_over:
                     return True
 
-                player_top_left = {"x": player_x - 110, "y": player_y - 110}
-                player_bottom_right = {"x": player_x - 110 + shrink_player_w - 110, "y": player_y - 110 + shrink_player_h - 110}
+                player_top_left = {"x": player_x + 175, "y": player_y -100}
+                player_bottom_right = {"x": player_x - 130 + shrink_player_w - 130, "y": player_y - 100 + shrink_player_h - 100}
 
                 cars = [
                     {"x": firebird_x, "y": firebird_y, "w": shrink_firebird_w, "h": shrink_firebird_h},
@@ -322,12 +322,12 @@ def collisioncar_check():
                     dog_bottom_right = {"x": dog["x"] + dog["w"], "y": dog["y"] + dog["h"]}
                     if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
                         dog_counter = 1
-                for bear in dogs:
+                for bear in bears:
                     bear_top_left = {"x": bear["x"], "y": bear["y"]}
                     bear_bottom_right = {"x": bear["x"] + bear["w"], "y": bear["y"] + bear["h"]}
                     if do_overlap(player_top_left, player_bottom_right, bear_top_left, bear_bottom_right):
-                            game_over = True
-                            graphics.configure_item("game_over_txt", show=True)
+                            #game_over = True
+                            #graphics.configure_item("game_over_txt", show=True)
                             return True
                 for ccar in ccars:
                     ccar_top_left = {"x": ccar["x"], "y": ccar["y"]}
@@ -343,11 +343,11 @@ graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
     if not game_over:
-        collisioncar_check()
         move_firebird()
         move_dogs()
         move_bear()
         move_cavalier()
+        collisioncar_check()
     graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
