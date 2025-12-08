@@ -147,6 +147,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
 
         game_over = False
+        you_win = False
         #This draws the player
         #Code for the store
         graphics.draw_rectangle((0, 0), (1500, 200), fill=comp151Colors.MAROON)
@@ -175,6 +176,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_text((130, 20), f"Grocery Store",
                       color=comp151Colors.WHITE, size=25)
         graphics.draw_text((550, 380), "Game Over", color=comp151Colors.WHITE, size=80, tag='game_over_txt', show=False)
+        graphics.draw_text((550, 380), "You Win!!!", color=comp151Colors.WHITE, size=80, tag='you_win_txt', show=False)
         #code
         # This draws the player
         graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
@@ -284,8 +286,8 @@ def move_cavalier():
 
 
 def collisioncar_check():
-                global player_x, player_y, game_over, dog_counter
-                if game_over:
+                global player_x, player_y, game_over, dog_counter, you_win
+                if game_over or you_win:
                     return True
 
                 player_top_left = {"x": player_x + 175, "y": player_y -100}
@@ -342,19 +344,23 @@ def collisioncar_check():
                         #graphics.configure_item("game_over_txt", show=True)
                         return True
                 for target in target_car:
-                    target_top_left = {"x": target["x"], "y": target["y"] - 50}
-                    target_bottom_right = {"x": target["x"] + target["w"], "y": target["y"] + target["h"] + -220}
+                    target_top_left = {"x": target["x"], "y": target["y"] - 130}
+                    target_bottom_right = {"x": target["x"] + target["w"], "y": target["y"] + target["h"] - 130}
                     if do_overlap(player_top_left, player_bottom_right, target_top_left, target_bottom_right):
-                        game_over = True
-                        graphics.configure_item("game_over_txt", show=True)
-                        return True
+                        if dog_counter == 1:
+                            graphics.configure_item("you_win_txt", show=True)
+                            return True
+                        else:
+                            game_over = True
+                            graphics.configure_item("game_over_txt", show=True)
+                            return True
 
 
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
-    if not game_over:
+    if not game_over or you_win:
         move_firebird()
         move_dogs()
         move_bear()
