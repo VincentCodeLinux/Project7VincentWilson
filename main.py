@@ -310,6 +310,9 @@ def collisioncar_check():
                     {"x": car1_x, "y": car1_y, "w": shrink_car1_w, "h": shrink_car1_h},
                     {"x": car2_x, "y": car2_y, "w": shrink_car2_w, "h": shrink_car2_h}
                 ]
+                target_car = [
+                    {"x": target_car_x, "y": target_car_y, "w": shrink_target_car_w, "h": shrink_target_car_h},
+                ]
                 for car in cars:
                     car_top_left = {"x": car["x"], "y": car["y"]}
                     car_bottom_right = {"x": car["x"] + car["w"], "y": car["y"] - 100 + car["h"] - 100}
@@ -318,8 +321,8 @@ def collisioncar_check():
                         #graphics.configure_item("game_over_txt", show=True)
                         return True
                 for dog in dogs:
-                    dog_top_left = {"x": dog["x"] - 100 , "y": dog["y"] - 100}
-                    dog_bottom_right = {"x": dog["x"] + dog["w"] + 100, "y": dog["y"] + dog["h"] + 1}
+                    dog_top_left = {"x": dog["x"] - 30 , "y": dog["y"] - 60}
+                    dog_bottom_right = {"x": dog["x"] + dog["w"] + 30, "y": dog["y"] + dog["h"] + 30}
                     if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
                         game_over = True
                         graphics.configure_item("game_over_txt", show=True)
@@ -334,6 +337,13 @@ def collisioncar_check():
                 for ccar in ccars:
                     ccar_top_left = {"x": ccar["x"], "y": ccar["y"] - 50}
                     ccar_bottom_right = {"x": ccar["x"] + ccar["w"], "y": ccar["y"] + ccar["h"] + -220}
+                    if do_overlap(player_top_left, player_bottom_right, ccar_top_left, ccar_bottom_right):
+                        #game_over = True
+                        #graphics.configure_item("game_over_txt", show=True)
+                        return True
+                for target in target_car:
+                    target_top_left = {"x": ccar["x"], "y": ccar["y"] - 50}
+                    target_bottom_right = {"x": ccar["x"] + ccar["w"], "y": ccar["y"] + ccar["h"] + -220}
                     if do_overlap(player_top_left, player_bottom_right, ccar_top_left, ccar_bottom_right):
                         #game_over = True
                         #graphics.configure_item("game_over_txt", show=True)
