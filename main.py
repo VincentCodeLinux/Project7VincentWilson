@@ -214,13 +214,13 @@ with graphics.window(label="Project 7", width=1600, height=1200):
 # This is where I move the sprites
 def move_firebird():
             global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird1_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
-            firebird_x -= 2
+            firebird_x -= 1
             if firebird_x < 0:
                 firebird_x = 1500
-            firebird1_x -= 2
+            firebird1_x -= 1
             if firebird1_x < 0:
                 firebird1_x = 1500
-            firebird2_x -= 2
+            firebird2_x -= 1
             if firebird2_x < 0:
                 firebird2_x = 1500
             graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y),
@@ -264,21 +264,21 @@ def move_bear():
     pass
 def move_cavalier():
     global car_x, car_y, shrink_car_w, shrink_car_h, car1_x, car1_y, shrink_car1_w, shrink_car1_h, car2_x, car2_y, shrink_car2_w, shrink_car2_h
-    car_x -= 2
-    if car_x < 0:
-        car_x = 1500
-    car1_x -= 2
-    if car1_x < 0:
-        car1_x = 1500
-    car2_x -= 2
-    if car2_x < 0:
-        car2_x = 1500
+    car_x += 1
+    if car_x > 1500:
+        car_x = 0
+    car1_x += 1
+    if car1_x > 1500:
+        car1_x = 0
+    car2_x += 1
+    if car2_x > 1500:
+        car2_x = 0
     graphics.configure_item("car_update", pmin=(car_x, car_y),
-                            pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
-    graphics.configure_item("firebird1_update", pmin=(firebird1_x, firebird1_y),
-                            pmax=(firebird1_x + shrink_firebird1_w, firebird1_y + shrink_firebird1_h))
-    graphics.configure_item("firebird2_update", pmin=(firebird2_x, firebird2_y),
-                            pmax=(firebird2_x + shrink_firebird2_w, firebird2_y + shrink_firebird2_h))
+                            pmax=(car_x + shrink_car_w, car_y + shrink_car_h))
+    graphics.configure_item("car1_update", pmin=(car1_x, car1_y),
+                            pmax=(car1_x + shrink_car1_w, car1_y + shrink_car1_h))
+    graphics.configure_item("car2_update", pmin=(car2_x, car2_y),
+                            pmax=(car2_x + shrink_car2_w, car2_y + shrink_car2_h))
 
     pass
 
@@ -304,6 +304,12 @@ def collisioncar_check():
                 bears = [
                 {"x": bear_x, "y": bear_y, "w": shrink_bear_w, "h": shrink_bear_h},
                 ]
+
+                ccars = [
+                    {"x": car_x, "y": car_y, "w": shrink_car_w, "h": shrink_car_h},
+                    {"x": car1_x, "y": car1_y, "w": shrink_car1_w, "h": shrink_car1_h},
+                    {"x": car2_x, "y": car2_y, "w": shrink_car2_w, "h": shrink_car2_h}
+                ]
                 for car in cars:
                     car_top_left = {"x": car["x"], "y": car["y"]}
                     car_bottom_right = {"x": car["x"] + car["w"], "y": car["y"] + car["h"]}
@@ -323,6 +329,13 @@ def collisioncar_check():
                             game_over = True
                             graphics.configure_item("game_over_txt", show=True)
                             return True
+                for ccar in ccars:
+                    ccar_top_left = {"x": ccar["x"], "y": ccar["y"]}
+                    ccar_bottom_right = {"x": ccar["x"] + ccar["w"], "y": ccar["y"] + ccar["h"]}
+                    if do_overlap(player_top_left, player_bottom_right, ccar_top_left, ccar_bottom_right):
+                        game_over = True
+                        graphics.configure_item("game_over_txt", show=True)
+                        return True
 
 
 
@@ -334,6 +347,7 @@ while graphics.is_dearpygui_running():
         move_firebird()
         move_dogs()
         move_bear()
+        move_cavalier()
     graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
