@@ -115,10 +115,16 @@ with graphics.texture_registry():
 
 #This is where I move the sprites
 def move_firebird():
-    global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h
+    global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
     firebird_x -= 3
     if firebird_x < 0 :
         firebird_x = 1500
+    firebird1_x -= 3
+    if firebird1_x < 0:
+        firebird1_x = 1500
+    firebird2_x -= 3
+    if firebird2_x < 0:
+        firebird2_x = 1500
     graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y), pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
 pass
 
@@ -137,7 +143,7 @@ def do_overlap(l1, r1, l2, r2):
 #This will be where the collision code is
 
 def collisioncar_check():
-        global player_x, player_y
+        global player_x, player_y, game_over
         left_side_of_player = {'x': player_x, 'y': player_y}
         right_side_of_player = {'x': player_x + shrink_player_w, 'y': player_y + shrink_player_h}
 
@@ -150,7 +156,7 @@ def collisioncar_check():
                 right_side_of_car = {'x': car_x + car_w, 'y': car_y + car_h}
 
                 if do_overlap(left_side_of_player, right_side_of_player, left_side_of_car, right_side_of_car):
-                    graphics.draw_text((400, 400), "Game Over", colors = comp151Colors.RED, size = 50)
+                    game_over = True
                     return True
         return False
 
@@ -237,7 +243,11 @@ with graphics.window(label="Project 7", width=1600, height=1200):
 graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
-    move_firebird()
-    collisioncar_check()
-    graphics.render_dearpygui_frame()
+    if not game_over:
+        move_firebird()
+        collisioncar_check()
+    else:
+        if do_overlap(left_side_of_player, right_side_of_player, left_side_of_car, right_side_of_car):
+            graphics.draw_text((400, 400), "Game Over", colors=comp151Colors.RED, size=50)
+graphics.render_dearpygui_frame()
 graphics.destroy_context()
