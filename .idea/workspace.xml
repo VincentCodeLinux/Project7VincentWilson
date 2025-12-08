@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I set the move bear function">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -372,17 +372,66 @@
       <option name="project" value="LOCAL" />
       <updated>1765161689949</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="I got the length correct, now I just need to fix the issue of it crashing">
+      <option name="closed" value="true" />
+      <created>1765162538970</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1765162538970</updated>
+    </task>
+    <task id="LOCAL-00040" summary="I officially stopped it from crashing, so I now have the collisions down. I had the render graphics in the wrong place.">
+      <option name="closed" value="true" />
+      <created>1765162783702</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1765162783702</updated>
+    </task>
+    <task id="LOCAL-00041" summary="I added collision for the dog, How I did it was I made it so that if the player touches the dog then it would set dog_counter to 1">
+      <option name="closed" value="true" />
+      <created>1765163594843</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1765163594843</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Trying to figure out how to flip the dog back and forth">
+      <option name="closed" value="true" />
+      <created>1765165245847</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1765165245847</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added a xspeed variable for both dogs">
+      <option name="closed" value="true" />
+      <created>1765200606515</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1765200606515</updated>
+    </task>
+    <task id="LOCAL-00044" summary="I was able to get the dogs to bounce, now I need to see if the collision works for them.">
+      <option name="closed" value="true" />
+      <created>1765200979812</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1765200979812</updated>
+    </task>
+    <task id="LOCAL-00045" summary="I set the move bear function">
+      <option name="closed" value="true" />
+      <created>1765201228647</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1765201228647</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I made code to load the second car" />
-    <MESSAGE value="I made code for the second car" />
-    <MESSAGE value="I made code for the third car" />
-    <MESSAGE value="I started the code for the dog, I loaded the image" />
-    <MESSAGE value="I finished the code for the 1st dog" />
-    <MESSAGE value="I finished the code for loading the second log and shrinking the size of it" />
-    <MESSAGE value="I just modified the sizes of the cars to make it easier to get around them once the collisions are done" />
     <MESSAGE value="I started the code for the bear, I made the code to shrink them." />
     <MESSAGE value="I finished the code for the bear to appear" />
     <MESSAGE value="I finished the code to load and shrink the car on the second street" />
@@ -401,6 +450,13 @@
     <MESSAGE value="I fixed part of the code by removing the add text for the game over screen" />
     <MESSAGE value="I changed code around and added some code to the first set of cars, im still trying to get the Game over screen to pop up" />
     <MESSAGE value="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from" />
-    <option name="LAST_COMMIT_MESSAGE" value="I finally got the game over screen to pop up but the radius where the player can get hit is pretty far. I still need to tweak the range the player can get hit from" />
+    <MESSAGE value="I got the length correct, now I just need to fix the issue of it crashing" />
+    <MESSAGE value="I officially stopped it from crashing, so I now have the collisions down. I had the render graphics in the wrong place." />
+    <MESSAGE value="I added collision for the dog, How I did it was I made it so that if the player touches the dog then it would set dog_counter to 1" />
+    <MESSAGE value="Trying to figure out how to flip the dog back and forth" />
+    <MESSAGE value="Added a xspeed variable for both dogs" />
+    <MESSAGE value="I was able to get the dogs to bounce, now I need to see if the collision works for them." />
+    <MESSAGE value="I set the move bear function" />
+    <option name="LAST_COMMIT_MESSAGE" value="I set the move bear function" />
   </component>
 </project>

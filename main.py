@@ -300,6 +300,13 @@ def collisioncar_check():
                     dog_bottom_right = {"x": dog["x"] + dog["w"], "y": dog["y"] + dog["h"]}
                     if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
                         dog_counter = 1
+                for bear in dogs:
+                    bear_top_left = {"x": bear["x"], "y": bear["y"]}
+                    bear_bottom_right = {"x": bear["x"] + bear["w"], "y": bear["y"] + bear["h"]}
+                    if do_overlap(player_top_left, player_bottom_right, bear_top_left, bear_bottom_right):
+                            game_over = True
+                            graphics.configure_item("game_over_txt", show=True)
+                            return True
 
 
 
