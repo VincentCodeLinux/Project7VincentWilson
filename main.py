@@ -18,6 +18,7 @@ dog_xspeed = -1
 dog1_y = 360
 dog1_x = 400
 dog1_xspeed = -1
+bear_xspeed = 1
 bear_y = 380
 bear_x = 400
 car_y = 500
@@ -251,19 +252,14 @@ def move_dogs():
     pass
 
 def move_bear():
-    global dog_x, dog_y, shrink_dog_w, shrink_dog_h, dog1_x, dog1_y, shrink_dog1_w, shrink_dog1_h, dog_xspeed, dog1_xspeed
-    dog_x += dog_xspeed
-    if dog_x < 0 or dog_x + shrink_dog_w > 1500:
-        dog_xspeed *= -1
+    global bear_x, bear_y, shrink_bear_w, shrink_bear_h, bear_xspeed, bear_xspeed
+    bear_x += bear_xspeed
+    if bear_x < 0 or bear_x + shrink_bear_w > 1500:
+        bear_xspeed *= -1
 
-    dog1_x += dog1_xspeed
-    if dog1_x < 0 or dog1_x + shrink_dog1_w > 1500:
-        dog1_xspeed *= -1
+    graphics.configure_item("bear_update", pmin=(bear_x, bear_y),
+                            pmax=(bear_x + shrink_bear_w, bear_y + shrink_bear_h))
 
-    graphics.configure_item("dog_update", pmin=(dog_x, dog_y),
-                            pmax=(dog_x + shrink_dog_w, dog_y + shrink_dog_h))
-    graphics.configure_item("dog1_update", pmin=(dog1_x, dog1_y),
-                            pmax=(dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h))
 
     pass
 
@@ -288,6 +284,10 @@ def collisioncar_check():
                     {"x": dog_x, "y": dog_y, "w": shrink_dog_w, "h": shrink_dog_h},
                     {"x": dog1_x, "y": dog1_y, "w": shrink_dog1_w, "h": shrink_dog1_h},
                 ]
+
+                bears = [
+                {"x": bear_x, "y": bear_y, "w": shrink_bear_w, "h": shrink_bear_h},
+                ]
                 for car in cars:
                     car_top_left = {"x": car["x"], "y": car["y"]}
                     car_bottom_right = {"x": car["x"] + car["w"], "y": car["y"] + car["h"]}
@@ -310,6 +310,7 @@ while graphics.is_dearpygui_running():
         collisioncar_check()
         move_firebird()
         move_dogs()
+        move_bear()
     graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
