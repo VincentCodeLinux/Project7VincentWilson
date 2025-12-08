@@ -250,6 +250,23 @@ def move_dogs():
 
     pass
 
+def move_bear():
+    global dog_x, dog_y, shrink_dog_w, shrink_dog_h, dog1_x, dog1_y, shrink_dog1_w, shrink_dog1_h, dog_xspeed, dog1_xspeed
+    dog_x += dog_xspeed
+    if dog_x < 0 or dog_x + shrink_dog_w > 1500:
+        dog_xspeed *= -1
+
+    dog1_x += dog1_xspeed
+    if dog1_x < 0 or dog1_x + shrink_dog1_w > 1500:
+        dog1_xspeed *= -1
+
+    graphics.configure_item("dog_update", pmin=(dog_x, dog_y),
+                            pmax=(dog_x + shrink_dog_w, dog_y + shrink_dog_h))
+    graphics.configure_item("dog1_update", pmin=(dog1_x, dog1_y),
+                            pmax=(dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h))
+
+    pass
+
 
 
 
