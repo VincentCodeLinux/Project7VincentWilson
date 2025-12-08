@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I set the move bear function">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="The bear now has collision and when you collide with it, it brings you to the game over screen">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -428,12 +428,26 @@
       <option name="project" value="LOCAL" />
       <updated>1765201228647</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="I made my list for the bear">
+      <option name="closed" value="true" />
+      <created>1765201790465</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1765201790465</updated>
+    </task>
+    <task id="LOCAL-00047" summary="The bear now has collision and when you collide with it, it brings you to the game over screen">
+      <option name="closed" value="true" />
+      <created>1765201951071</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1765201951071</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I started the code for the bear, I made the code to shrink them." />
-    <MESSAGE value="I finished the code for the bear to appear" />
     <MESSAGE value="I finished the code to load and shrink the car on the second street" />
     <MESSAGE value="I finisished the code for the first car on the second section" />
     <MESSAGE value="I finished the code for the second car on the second street" />
@@ -457,6 +471,8 @@
     <MESSAGE value="Added a xspeed variable for both dogs" />
     <MESSAGE value="I was able to get the dogs to bounce, now I need to see if the collision works for them." />
     <MESSAGE value="I set the move bear function" />
-    <option name="LAST_COMMIT_MESSAGE" value="I set the move bear function" />
+    <MESSAGE value="I made my list for the bear" />
+    <MESSAGE value="The bear now has collision and when you collide with it, it brings you to the game over screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="The bear now has collision and when you collide with it, it brings you to the game over screen" />
   </component>
 </project>

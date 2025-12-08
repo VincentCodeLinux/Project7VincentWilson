@@ -264,16 +264,16 @@ def move_bear():
     pass
 def move_cavalier():
     global car_x, car_y, shrink_car_w, shrink_car_h, car1_x, car1_y, shrink_car1_w, shrink_car1_h, car2_x, car2_y, shrink_car2_w, shrink_car2_h
-    firebird_x -= 2
-    if firebird_x < 0:
-        firebird_x = 1500
-    firebird1_x -= 2
-    if firebird1_x < 0:
-        firebird1_x = 1500
-    firebird2_x -= 2
-    if firebird2_x < 0:
-        firebird2_x = 1500
-    graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y),
+    car_x -= 2
+    if car_x < 0:
+        car_x = 1500
+    car1_x -= 2
+    if car1_x < 0:
+        car1_x = 1500
+    car2_x -= 2
+    if car2_x < 0:
+        car2_x = 1500
+    graphics.configure_item("car_update", pmin=(car_x, car_y),
                             pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
     graphics.configure_item("firebird1_update", pmin=(firebird1_x, firebird1_y),
                             pmax=(firebird1_x + shrink_firebird1_w, firebird1_y + shrink_firebird1_h))
