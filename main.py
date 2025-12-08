@@ -3,8 +3,9 @@ import dearpygui.dearpygui as graphics
 
 graphics.create_context()
 #This is some of the player variables
-player_y = -10
-player_x = 10
+dog_counter = 0
+player_y = 10
+player_x = 450
 firebird_y = 175
 firebird_x = 500
 firebird1_y = 150
@@ -170,7 +171,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         #This code draws the sign for the store
         graphics.draw_text((130, 20), f"Grocery Store",
                       color=comp151Colors.WHITE, size=25)
-        graphics.draw_text((400, 400), "Game Over", color=comp151Colors.WHITE, size=80, tag='game_over_txt', show=False)
+        graphics.draw_text((550, 380), "Game Over", color=comp151Colors.WHITE, size=80, tag='game_over_txt', show=False)
         #code
         # This draws the player
         graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
@@ -233,8 +234,9 @@ def move_firebird():
 
 
 
+
 def collisioncar_check():
-                global player_x, player_y, game_over
+                global player_x, player_y, game_over, dog_counter
                 if game_over:
                     return True
 
@@ -257,6 +259,11 @@ def collisioncar_check():
                         game_over = True
                         graphics.configure_item("game_over_txt", show=True)
                         return True
+                for dog in dogs:
+                    dog_top_left = {"x": dog["x"], "y": dog["y"]}
+                    dog_bottom_right = {"x": dog["x"] + dog["w"], "y": dog["y"] + dog["h"]}
+                    if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
+                        dog_counter = 1
 
 
 
