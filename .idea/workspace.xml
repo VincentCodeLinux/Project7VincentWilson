@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I just got code to work for a car to move, next I need to figure out how to make it so that you get a game over when you touch it">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I fixed part of the code by removing the add text for the game over screen">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -308,16 +308,58 @@
       <option name="project" value="LOCAL" />
       <updated>1765142038453</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="I added the sign for the grocery store">
+      <option name="closed" value="true" />
+      <created>1765142213420</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1765142213421</updated>
+    </task>
+    <task id="LOCAL-00032" summary="I changed the code so that the car goes the other way, it looked better this way in my opinion">
+      <option name="closed" value="true" />
+      <created>1765142615182</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1765142615182</updated>
+    </task>
+    <task id="LOCAL-00033" summary="I started the functon for the car collision check">
+      <option name="closed" value="true" />
+      <created>1765144095791</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1765144095791</updated>
+    </task>
+    <task id="LOCAL-00034" summary="I create the player boundaries that could be touched and the boundaries for the top three cars on the first road">
+      <option name="closed" value="true" />
+      <created>1765144450686</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1765144450686</updated>
+    </task>
+    <task id="LOCAL-00035" summary="I added some collision checks but it still isnt working, heres my current code at this time.">
+      <option name="closed" value="true" />
+      <created>1765153479560</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1765153479560</updated>
+    </task>
+    <task id="LOCAL-00036" summary="I fixed part of the code by removing the add text for the game over screen">
+      <option name="closed" value="true" />
+      <created>1765154506782</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1765154506782</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I added the parking lot/parking spot rectangles" />
-    <MESSAGE value="I added the rest of the sprites that im going to be using" />
-    <MESSAGE value="I set up the basic boiler plate code for the person" />
-    <MESSAGE value="I added the texture registry" />
-    <MESSAGE value="I got the character on the screen. I still need to shrink him and help him move" />
-    <MESSAGE value="I got the player moving" />
     <MESSAGE value="I got the player a proper size and moving" />
     <MESSAGE value="I added a car and changed the scaling for it. Its now on the screen" />
     <MESSAGE value="I made code to load the second car" />
@@ -337,6 +379,12 @@
     <MESSAGE value="I loaded the image for the target car" />
     <MESSAGE value="I finished the code for displaying the target car" />
     <MESSAGE value="I just got code to work for a car to move, next I need to figure out how to make it so that you get a game over when you touch it" />
-    <option name="LAST_COMMIT_MESSAGE" value="I just got code to work for a car to move, next I need to figure out how to make it so that you get a game over when you touch it" />
+    <MESSAGE value="I added the sign for the grocery store" />
+    <MESSAGE value="I changed the code so that the car goes the other way, it looked better this way in my opinion" />
+    <MESSAGE value="I started the functon for the car collision check" />
+    <MESSAGE value="I create the player boundaries that could be touched and the boundaries for the top three cars on the first road" />
+    <MESSAGE value="I added some collision checks but it still isnt working, heres my current code at this time." />
+    <MESSAGE value="I fixed part of the code by removing the add text for the game over screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="I fixed part of the code by removing the add text for the game over screen" />
   </component>
 </project>

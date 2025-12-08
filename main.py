@@ -3,7 +3,7 @@ import dearpygui.dearpygui as graphics
 
 graphics.create_context()
 #This is some of the player variables
-player_y = 10
+player_y = 5
 player_x = 500
 firebird_y = 175
 firebird_x = 500
@@ -34,15 +34,15 @@ target_car_scaling = 0.35
 #This code loads the image
 player_w, player_h, channels, player_raw_data = graphics.load_image("PersonSprite.png")
 #This code loads the image for the first car picture
-firebird_w, firebird_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
+firebird_w, firebird_h, channels, firebird1_raw_data = graphics.load_image("FirebirdSprite.png")
 #This code loads the image for the second car picture
-firebird1_w, firebird1_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
+firebird1_w, firebird1_h, channels, firebird2_raw_data = graphics.load_image("FirebirdSprite.png")
 #this loads the third car image
-firebird2_w, firebird2_h, channels, firebird_raw_data = graphics.load_image("FirebirdSprite.png")
+firebird2_w, firebird2_h, channels, firebird3_raw_data = graphics.load_image("FirebirdSprite.png")
 #This is the code to load the dog
 dog_w, dog_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
 #This code loads the second dog
-dog1_w, dog1_h, channels, dog_raw_data = graphics.load_image("CookieSprite.png")
+dog1_w, dog1_h, channels, dog1_raw_data = graphics.load_image("CookieSprite.png")
 #This code loads the bear
 bear_w, bear_h, channels, bear_raw_data = graphics.load_image("BearSprite.png")
 #This code loads the first car on the second street
@@ -102,9 +102,9 @@ def move_player(sender, app_data):
         graphics.configure_item("player_update", pmin=(player_x, player_y), pmax=(player_x+shrink_player_w, player_y+shrink_player_h))
 with graphics.texture_registry():
     graphics.add_static_texture(player_w, player_h, player_raw_data, tag="PersonSprite")
-    graphics.add_static_texture(firebird_w, firebird_h, firebird_raw_data, tag="FirebirdSprite")
-    graphics.add_static_texture(firebird1_w, firebird1_h, firebird_raw_data, tag="Firebird1Sprite")
-    graphics.add_static_texture(firebird2_w, firebird2_h, firebird_raw_data, tag="Firebird2Sprite")
+    graphics.add_static_texture(firebird_w, firebird_h, firebird1_raw_data, tag="FirebirdSprite")
+    graphics.add_static_texture(firebird1_w, firebird1_h, firebird2_raw_data, tag="Firebird1Sprite")
+    graphics.add_static_texture(firebird2_w, firebird2_h, firebird3_raw_data, tag="Firebird2Sprite")
     graphics.add_static_texture(dog_w, dog_h, dog_raw_data, tag="dogSprite")
     graphics.add_static_texture(dog1_w, dog1_h, dog_raw_data, tag="dog1Sprite")
     graphics.add_static_texture(bear_w, bear_h, bear_raw_data, tag="bearSprite")
@@ -113,52 +113,21 @@ with graphics.texture_registry():
     graphics.add_static_texture(car2_w, car2_h, car_raw_data, tag="car2Sprite")
     graphics.add_static_texture(target_car_w, target_car_h, target_car_raw_data, tag="target_car_Sprite")
 
-#This is where I move the sprites
-def move_firebird():
-    global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
-    firebird_x -= 3
-    if firebird_x < 0 :
-        firebird_x = 1500
-    firebird1_x -= 3
-    if firebird1_x < 0:
-        firebird1_x = 1500
-    firebird2_x -= 3
-    if firebird2_x < 0:
-        firebird2_x = 1500
-    graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y), pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
-pass
+
+# This will be where the collision code is
 
 def do_overlap(l1, r1, l2, r2):
+            # If one rectangle is to the left of the other
+            if l1.get('x') > r2.get('x') or l2.get('x') > r1.get('x'):
+                return False
 
-    # If one rectangle is to the left of the other
-    if l1.get('x') > r2.get('x') or l2.get('x') > r1.get('x'):
-        return False
+            # If one rectangle is above the other
+            if r1.get('y') < l2.get('y') or r2.get('y') < l1.get('y'):
+                return False
 
-    # If one rectangle is above the other
-    if r1.get('y') < l2.get('y') or r2.get('y') < l1.get('y'):
-        return False
+            return True
 
-    return True
 
-#This will be where the collision code is
-
-def collisioncar_check():
-        global player_x, player_y, game_over
-        left_side_of_player = {'x': player_x, 'y': player_y}
-        right_side_of_player = {'x': player_x + shrink_player_w, 'y': player_y + shrink_player_h}
-
-        cars = [(firebird_x, firebird_y, shrink_firebird_w, shrink_firebird_h),
-                    (firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h),
-                    (firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h)]
-
-        for car_x, car_y, car_w, car_h in cars:
-                left_side_of_car = {'x': car_x, 'y': car_y}
-                right_side_of_car = {'x': car_x + car_w, 'y': car_y + car_h}
-
-                if do_overlap(left_side_of_player, right_side_of_player, left_side_of_car, right_side_of_car):
-                    game_over = True
-                    return True
-        return False
 
 
 
@@ -172,10 +141,9 @@ with graphics.handler_registry():
 graphics.create_viewport(title="Project 7", width=1480, height=1200)
 with graphics.window(label="Project 7", width=1600, height=1200):
     with graphics.drawlist(width=1500, height=800):
+        graphics.draw_text((400, 400), "Game Over", color=comp151Colors.RED, size=50, tag='game_over_txt', show=False)
 
-
-
-
+        game_over = False
         #This draws the player
         #Code for the store
         graphics.draw_rectangle((0, 0), (1500, 200), fill=comp151Colors.MAROON)
@@ -239,15 +207,66 @@ with graphics.window(label="Project 7", width=1600, height=1200):
                             tag="target_car_update")
 
 
+        # This is where I move the sprites
+        def move_firebird():
+            global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird1_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
+            firebird_x -= 3
+            if firebird_x < 0:
+                firebird_x = 1500
+            firebird1_x -= 3
+            if firebird1_x < 0:
+                firebird1_x = 1500
+            firebird2_x -= 3
+            if firebird2_x < 0:
+                firebird2_x = 1500
+            graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y),
+                                    pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
+            graphics.configure_item("firebird1_update", pmin=(firebird1_x, firebird1_y),
+                                    pmax=(firebird1_x + shrink_firebird1_w, firebird1_y + shrink_firebird1_h))
+            graphics.configure_item("firebird2_update", pmin=(firebird2_x, firebird2_y),
+                                    pmax=(firebird2_x + shrink_firebird2_w, firebird2_y + shrink_firebird2_h))
+
+
+        pass
+
+
+
+
+
+def collisioncar_check():
+                global player_x, player_y, game_over
+                player_top_left = {"x": player_x, "y": player_y}
+                player_bottom_right = {"x": player_x + shrink_player_w, "y": player_y + shrink_player_h}
+
+                cars = [
+                    {"x": firebird_x, "y": firebird_y, "w": shrink_firebird_w, "h": shrink_firebird_h},
+                    {"x": firebird1_x, "y": firebird1_y, "w": shrink_firebird1_w, "h": shrink_firebird1_h},
+                    {"x": firebird2_x, "y": firebird2_y, "w": shrink_firebird2_w, "h": shrink_firebird2_h}
+                ]
+                dogs = [
+                    {"x": dog_x, "y": dog_y, "w": shrink_dog_w, "h": shrink_dog_h},
+                    {"x": dog1_x, "y": dog1_y, "w": shrink_dog1_w, "h": shrink_dog1_h},
+                ]
+                for car in cars:
+                    car_top_left = {"x": car["x"], "y": car["y"]}
+                    car_bottom_right = {"x": car["x"] + car["w"], "y": car["y"] + car["h"]}
+                    if do_overlap(player_top_left, player_bottom_right, car_top_left, car_bottom_right):
+                        game_over = True
+                        graphics.configure_item("game_over_txt", show=True)
+                        return True
+
+
+
+
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
-    if not game_over:
-        move_firebird()
-        collisioncar_check()
-    else:
-        if do_overlap(left_side_of_player, right_side_of_player, left_side_of_car, right_side_of_car):
-            graphics.draw_text((400, 400), "Game Over", colors=comp151Colors.RED, size=50)
-graphics.render_dearpygui_frame()
+    move_firebird()
+    if collisioncar_check():
+        graphics.configure_item("game_over_txt", show=True)
+
+
+    graphics.render_dearpygui_frame()
+graphics.start_dearpygui()
 graphics.destroy_context()
