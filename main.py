@@ -235,8 +235,11 @@ def move_firebird():
 
 def collisioncar_check():
                 global player_x, player_y, game_over
-                player_top_left = {"x": player_x, "y": player_y}
-                player_bottom_right = {"x": player_x + shrink_player_w, "y": player_y + shrink_player_h}
+                if game_over:
+                    return True
+
+                player_top_left = {"x": player_x - 110, "y": player_y - 110}
+                player_bottom_right = {"x": player_x - 110 + shrink_player_w - 110, "y": player_y - 110 + shrink_player_h - 110}
 
                 cars = [
                     {"x": firebird_x, "y": firebird_y, "w": shrink_firebird_w, "h": shrink_firebird_h},
