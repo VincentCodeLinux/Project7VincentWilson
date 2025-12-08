@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="The bear now has collision and when you collide with it, it brings you to the game over screen">
+    <list default="true" id="2c2df08d-371f-456c-9784-1899e57707e8" name="Changes" comment="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,14 +67,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764601719376</updated>
-    </task>
-    <task id="LOCAL-00001" summary="I did my initial setup">
-      <option name="closed" value="true" />
-      <created>1764602004591</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1764602004591</updated>
     </task>
     <task id="LOCAL-00002" summary="I set up the top part of the map">
       <option name="closed" value="true" />
@@ -444,13 +436,34 @@
       <option name="project" value="LOCAL" />
       <updated>1765201951071</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="I created the function for the third set of cars">
+      <option name="closed" value="true" />
+      <created>1765206401214</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1765206401214</updated>
+    </task>
+    <task id="LOCAL-00049" summary="I added the basic movement code for the second set of cars">
+      <option name="closed" value="true" />
+      <created>1765206537285</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1765206537285</updated>
+    </task>
+    <task id="LOCAL-00050" summary="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section">
+      <option name="closed" value="true" />
+      <created>1765207114404</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1765207114408</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I finished the code to load and shrink the car on the second street" />
-    <MESSAGE value="I finisished the code for the first car on the second section" />
-    <MESSAGE value="I finished the code for the second car on the second street" />
     <MESSAGE value="I finished the code for the third car on the second street" />
     <MESSAGE value="I started the x and y code for the final target car and shrinked it" />
     <MESSAGE value="I loaded the image for the target car" />
@@ -473,6 +486,9 @@
     <MESSAGE value="I set the move bear function" />
     <MESSAGE value="I made my list for the bear" />
     <MESSAGE value="The bear now has collision and when you collide with it, it brings you to the game over screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="The bear now has collision and when you collide with it, it brings you to the game over screen" />
+    <MESSAGE value="I created the function for the third set of cars" />
+    <MESSAGE value="I added the basic movement code for the second set of cars" />
+    <MESSAGE value="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section" />
+    <option name="LAST_COMMIT_MESSAGE" value="I set up the full collision for the second set of cars, but im not f=running into a collision issue, it will randomly say Game over when I get to the grass section" />
   </component>
 </project>
