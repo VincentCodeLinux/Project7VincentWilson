@@ -319,48 +319,47 @@ def collisioncar_check():
                     car_top_left = {"x": car["x"], "y": car["y"]}
                     car_bottom_right = {"x": car["x"] + car["w"], "y": car["y"] - 100 + car["h"] - 100}
                     if do_overlap(player_top_left, player_bottom_right, car_top_left, car_bottom_right):
-                        #game_over = True
-                        #graphics.configure_item("game_over_txt", show=True)
+                        game_over = True
+                        graphics.configure_item("game_over_txt", show=True)
                         return True
                 for dog in dogs:
                     dog_top_left = {"x": dog["x"] - 50 , "y": dog["y"] - 80}
                     dog_bottom_right = {"x": dog["x"] + dog["w"] + 50, "y": dog["y"] + dog["h"] -150}
                     if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
-                        game_over = True
-                        graphics.configure_item("game_over_txt", show=True)
                         dog_counter = 1
                 for bear in bears:
                     bear_top_left = {"x": bear["x"], "y": bear["y"]}
                     bear_bottom_right = {"x": bear["x"] + bear["w"], "y": bear["y"] + bear["h"] - 180}
                     if do_overlap(player_top_left, player_bottom_right, bear_top_left, bear_bottom_right):
-                            #game_over = True
-                            #graphics.configure_item("game_over_txt", show=True)
+                            game_over = True
+                            graphics.configure_item("game_over_txt", show=True)
                             return True
                 for ccar in ccars:
                     ccar_top_left = {"x": ccar["x"], "y": ccar["y"] - 50}
                     ccar_bottom_right = {"x": ccar["x"] + ccar["w"], "y": ccar["y"] + ccar["h"] + -220}
                     if do_overlap(player_top_left, player_bottom_right, ccar_top_left, ccar_bottom_right):
-                        #game_over = True
-                        #graphics.configure_item("game_over_txt", show=True)
+                        game_over = True
+                        graphics.configure_item("game_over_txt", show=True)
                         return True
                 for target in target_car:
-                    target_top_left = {"x": target["x"], "y": target["y"] - 130}
-                    target_bottom_right = {"x": target["x"] + target["w"], "y": target["y"] + target["h"] - 130}
-                    #if do_overlap(player_top_left, player_bottom_right, target_top_left, target_bottom_right):
-                        #if dog_counter == 1:
-                            #graphics.configure_item("you_win_txt", show=True)
-                            #return True
-                        #else:
-                            #game_over = True
-                            #graphics.configure_item("game_over_txt", show=True)
-                            #return True
+                    target_top_left = {"x": target["x"], "y": target["y"] - 80}
+                    target_bottom_right = {"x": target["x"] + target["w"], "y": target["y"] + target["h"] - 80}
+                    if do_overlap(player_top_left, player_bottom_right, target_top_left, target_bottom_right):
+                        if dog_counter == 1:
+                            you_win = True
+                            graphics.configure_item("you_win_txt", show=True)
+                            return True
+                        else:
+                            game_over = True
+                            graphics.configure_item("game_over_txt", show=True)
+                            return True
 
 
 
 graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
-    if not game_over: #or #you_win
+    if not game_over and not you_win:
         move_firebird()
         move_dogs()
         move_bear()
