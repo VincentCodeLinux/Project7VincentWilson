@@ -339,7 +339,7 @@ def collisioncar_check():
                 target_car = [
                     {"x": target_car_x, "y": target_car_y, "w": shrink_target_car_w, "h": shrink_target_car_h},
                 ]
-                #This creates a loop for the collision of the character
+                #This creates a loop for the collision of the first set of cars
                 for car in cars:
                     # This sets the x and y value for the collision on the top left of the car
                     car_top_left = {"x": car["x"], "y": car["y"]}
@@ -352,23 +352,36 @@ def collisioncar_check():
                         #Shows game over on the screen
                         graphics.configure_item("game_over_txt", show=True)
                         return True
+                #This creates a loop for the collision of the dog
                 for dog in dogs:
+                    # This sets the x and y value for the collision on the top left of the dog
                     dog_top_left = {"x": dog["x"] - 50 , "y": dog["y"] - 80}
+                    # This sets the x and y value for the collision on the bottom right of the dog
                     dog_bottom_right = {"x": dog["x"] + dog["w"] + 50, "y": dog["y"] + dog["h"] -150}
+                    #This is the if statement if it the player overlap/touches the dog
                     if do_overlap(player_top_left, player_bottom_right, dog_top_left, dog_bottom_right):
+                        #Since the dog is supposed to be petted when this happens it sets the variable dog_counter to 1
                         dog_counter = 1
                 for bear in bears:
+                    # This sets the x and y value for the collision on the top left of the bear
                     bear_top_left = {"x": bear["x"], "y": bear["y"]}
+                    # This sets the x and y value for the collision on the bottom right of the bear
                     bear_bottom_right = {"x": bear["x"] + bear["w"], "y": bear["y"] + bear["h"] - 180}
+                    #This is the if statement if it the player overlap/touches the bear
                     if do_overlap(player_top_left, player_bottom_right, bear_top_left, bear_bottom_right):
                             game_over = True
+                            # Shows game over on the screen
                             graphics.configure_item("game_over_txt", show=True)
                             return True
                 for ccar in ccars:
+                    # This sets the x and y value for the collision on the top left of the second row of cars
                     ccar_top_left = {"x": ccar["x"], "y": ccar["y"] - 50}
+                    # This sets the x and y value for the collision on the bottom right of the second row of cars
                     ccar_bottom_right = {"x": ccar["x"] + ccar["w"], "y": ccar["y"] + ccar["h"] + -220}
+                    #This is the if statement if it the player overlap/touches the cars
                     if do_overlap(player_top_left, player_bottom_right, ccar_top_left, ccar_bottom_right):
                         game_over = True
+                        # Shows game over on the screen
                         graphics.configure_item("game_over_txt", show=True)
                         return True
                 for target in target_car:
@@ -385,16 +398,18 @@ def collisioncar_check():
                             return True
 
 
-
+#Basic boilder plate ending code
 graphics.setup_dearpygui()
 graphics.show_viewport()
 while graphics.is_dearpygui_running():
+    #This is the code that gets ran if the game_over or you_win is false. So everything should be running
     if not game_over and not you_win:
         move_firebird()
         move_dogs()
         move_bear()
         move_cavalier()
         collisioncar_check()
+        #This makes it so that it updates every second
     graphics.render_dearpygui_frame()
 graphics.start_dearpygui()
 graphics.destroy_context()
