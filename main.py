@@ -93,16 +93,21 @@ shrink_target_car_h = int(target_car_h * target_car_scaling)
 #This code sets up the movement for the character
 def move_player(sender, app_data):
     global player_x, player_y, player_speed, shrink_player_w, shrink_player_h
+    #This helps the player move left
     key = app_data
     if key == graphics.mvKey_Left:
         player_x -= player_speed
+        #This lets the player move right
     elif key == graphics.mvKey_Right:
         player_x += player_speed
+        #This lets the player move up
     elif key == graphics.mvKey_Up:
         player_y -= player_speed
+        #This lets the player move down
     elif key == graphics.mvKey_Down:
         player_y += player_speed
     with graphics.mutex():
+        #Each of these graphics coding create the texture for each image thats going to have code attached to it
         graphics.configure_item("player_update", pmin=(player_x, player_y), pmax=(player_x+shrink_player_w, player_y+shrink_player_h))
 with graphics.texture_registry():
     graphics.add_static_texture(player_w, player_h, player_raw_data, tag="PersonSprite")
@@ -162,6 +167,7 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         #Code for 2nd road
         graphics.draw_rectangle((0, 500), (1500, 650), fill=comp151Colors.BLACK)
         #Code for the parking lot/end
+        #Each draws the background(Example being the grassy area)
         graphics.draw_rectangle((0, 650), (150, 800))
         graphics.draw_rectangle((0, 650), (300, 800))
         graphics.draw_rectangle((0, 650), (450, 800))
@@ -178,9 +184,10 @@ with graphics.window(label="Project 7", width=1600, height=1200):
         graphics.draw_text((550, 380), "Game Over", color=comp151Colors.WHITE, size=80, tag='game_over_txt', show=False)
         graphics.draw_text((550, 380), "You Win!!!", color=comp151Colors.WHITE, size=80, tag='you_win_txt', show=False)
         #code
-        # This draws the player
+        # This draws the player. Each of these draws the sprite on the game field. It needs to be drawn so the user can see it
         graphics.draw_image("PersonSprite", (player_x, player_y), (player_x + shrink_player_w, player_y + shrink_player_h),
                             tag="player_update")
+                                        #This sets the size of the sprite. I created special variables so that the sprite ends up being smaller then its original size.
         graphics.draw_image("FirebirdSprite", (firebird_x, firebird_y),
                             (firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h),
                             tag="firebird_update")
