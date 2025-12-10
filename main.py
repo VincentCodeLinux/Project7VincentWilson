@@ -2,7 +2,7 @@ import comp151Colors
 import dearpygui.dearpygui as graphics
 
 graphics.create_context()
-#This is some of the player variables
+#This is some of the player variables including x, y, and speed values. There are scaling variables too
 dog_counter = 0
 player_y = 10
 player_x = 450
@@ -222,7 +222,10 @@ with graphics.window(label="Project 7", width=1600, height=1200):
 
 # This is where I move the sprites
 def move_firebird():
+            #This sets the variables and terms that are going to be referenced in the code
             global firebird_x, firebird_y, shrink_firebird_w, shrink_firebird1_h, firebird1_x, firebird1_y, shrink_firebird1_w, shrink_firebird1_h, firebird2_x, firebird2_y, shrink_firebird2_w, shrink_firebird2_h
+            #This sets the firebird so that if it hits the left side of the screen the x value gets sets to 1500 which is the right side of the screen. Essentially creating a loop
+            #I have to do this for each one of them
             firebird_x -= 1
             if firebird_x < 0:
                 firebird_x = 1500
@@ -232,6 +235,8 @@ def move_firebird():
             firebird2_x -= 1
             if firebird2_x < 0:
                 firebird2_x = 1500
+                #This updates the sprite due to the position and size
+                #You have to do this for each one
             graphics.configure_item("firebird_update", pmin=(firebird_x, firebird_y),
                                     pmax=(firebird_x + shrink_firebird_w, firebird_y + shrink_firebird_h))
             graphics.configure_item("firebird1_update", pmin=(firebird1_x, firebird1_y),
@@ -242,11 +247,13 @@ def move_firebird():
 
             pass
 
-
+#This is the same code as the car but for the dog instead
 def move_dogs():
+    #Variables that are referenced are specifically for the dog
     global dog_x, dog_y, shrink_dog_w, shrink_dog_h, dog1_x, dog1_y, shrink_dog1_w, shrink_dog1_h, dog_xspeed, dog1_xspeed
     dog_x += dog_xspeed
     if dog_x < 0 or dog_x + shrink_dog_w > 1500:
+        #I use dog_xspeed as a variable so it lets the dog sprite bounce instead of the car which swapped to the other side of the screen. The x value for the dog is a positive number so when it becomes a negative number it goes the opposite way instead, because its subtracting pixels.
         dog_xspeed *= -1
 
     dog1_x += dog1_xspeed
@@ -259,11 +266,12 @@ def move_dogs():
                             pmax=(dog1_x + shrink_dog1_w, dog1_y + shrink_dog1_h))
 
     pass
-
+#Same code as the other two moving funtions
 def move_bear():
     global bear_x, bear_y, shrink_bear_w, shrink_bear_h, bear_xspeed, bear_xspeed
     bear_x += bear_xspeed
     if bear_x < 0 or bear_x + shrink_bear_w > 1500:
+        #This lets the bear bounce just like the dog through the bear_xspeed variable
         bear_xspeed *= -1
 
     graphics.configure_item("bear_update", pmin=(bear_x, bear_y),
@@ -271,9 +279,11 @@ def move_bear():
 
 
     pass
+#This moves the cavalier in the same way as the first set of cars. the cars keep going and come out the other side.
 def move_cavalier():
     global car_x, car_y, shrink_car_w, shrink_car_h, car1_x, car1_y, shrink_car1_w, shrink_car1_h, car2_x, car2_y, shrink_car2_w, shrink_car2_h
     car_x += 1
+    #If the x value hits anything higher than 1500 pixels then it resets the position of the car to x=0
     if car_x > 1500:
         car_x = 0
     car1_x += 1
@@ -282,6 +292,7 @@ def move_cavalier():
     car2_x += 1
     if car2_x > 1500:
         car2_x = 0
+        #This code updates each of the cars positions and sizes ensuring the size of the cars don't get messed up when moving
     graphics.configure_item("car_update", pmin=(car_x, car_y),
                             pmax=(car_x + shrink_car_w, car_y + shrink_car_h))
     graphics.configure_item("car1_update", pmin=(car1_x, car1_y),
@@ -291,42 +302,54 @@ def move_cavalier():
 
     pass
 
-
+#This is the function for the collision
 def collisioncar_check():
                 global player_x, player_y, game_over, dog_counter, you_win
+
+                #If the collision is activated it starts with this code. depending on it a win or loss it sends true as a value
                 if game_over or you_win:
                     return True
-
+                #This sets the collision block for the player
+                #This sets the x and y value for the collision on the top left of the player
                 player_top_left = {"x": player_x + 175, "y": player_y -100}
+                # This sets the x and y value for the collision on the bottom right of the player
                 player_bottom_right = {"x": player_x - 130 + shrink_player_w - 130, "y": player_y - 100 + shrink_player_h - 100}
-
+                #This creates a list for each value thats going to be referenced in the collision of each of the characters in the game
                 cars = [
                     {"x": firebird_x, "y": firebird_y, "w": shrink_firebird_w, "h": shrink_firebird_h},
                     {"x": firebird1_x, "y": firebird1_y, "w": shrink_firebird1_w, "h": shrink_firebird1_h},
                     {"x": firebird2_x, "y": firebird2_y, "w": shrink_firebird2_w, "h": shrink_firebird2_h}
                 ]
+                #This creates a list for each value thats going to be referenced in the collision of each of the characters in the game
                 dogs = [
                     {"x": dog_x, "y": dog_y, "w": shrink_dog_w, "h": shrink_dog_h},
                     {"x": dog1_x, "y": dog1_y, "w": shrink_dog1_w, "h": shrink_dog1_h},
                 ]
-
+                #This creates a list for each value thats going to be referenced in the collision of each of the characters in the game
                 bears = [
                 {"x": bear_x, "y": bear_y, "w": shrink_bear_w, "h": shrink_bear_h},
                 ]
-
+                #This creates a list for each value thats going to be referenced in the collision of each of the characters in the game
                 ccars = [
                     {"x": car_x, "y": car_y, "w": shrink_car_w, "h": shrink_car_h},
                     {"x": car1_x, "y": car1_y, "w": shrink_car1_w, "h": shrink_car1_h},
                     {"x": car2_x, "y": car2_y, "w": shrink_car2_w, "h": shrink_car2_h}
                 ]
+                #This creates a list for each value thats going to be referenced in the collision of each of the characters in the game
                 target_car = [
                     {"x": target_car_x, "y": target_car_y, "w": shrink_target_car_w, "h": shrink_target_car_h},
                 ]
+                #This creates a loop for the collision of the character
                 for car in cars:
+                    # This sets the x and y value for the collision on the top left of the car
                     car_top_left = {"x": car["x"], "y": car["y"]}
+                    # This sets the x and y value for the collision on the bottom right of the car
                     car_bottom_right = {"x": car["x"] + car["w"], "y": car["y"] - 100 + car["h"] - 100}
+                    #This is the if statement if it the player overlap/touches the car
                     if do_overlap(player_top_left, player_bottom_right, car_top_left, car_bottom_right):
+                        #If this happens it returns the game over value
                         game_over = True
+                        #Shows game over on the screen
                         graphics.configure_item("game_over_txt", show=True)
                         return True
                 for dog in dogs:
